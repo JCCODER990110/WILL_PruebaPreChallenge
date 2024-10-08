@@ -4,6 +4,8 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
+
+
 function crearClasePersona() {
   class Persona {
     constructor(nombre, edad, hobbies, amigos) {
@@ -11,6 +13,11 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+
+      this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
 
     }
 
@@ -21,15 +28,20 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+      this.amigos.push({nombre: nombre, edad: edad});
+
     }
 
     addHobby(hobby) {
       // El método 'addHobby' recibe un string 'hobby' y debe agregarlo al arreglo de hobbies de la persona.
-      // No debe retornar nada.
+      // No debe retornar nada
 
       // Tu código aca:
 
+      this.hobbies.push(hobby);
+
     }
+
     getFriends() {
       // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
       // de la persona.
@@ -39,6 +51,15 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+      var Amix = [];
+
+      for (let i = 0; i < this.amigos.length; i++){
+        var comodin = this.amigos[i];
+        Amix.push(comodin.nombre);
+      };
+
+      return Amix;
+
     }
 
     getHobbies() {
@@ -47,6 +68,8 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+
+      return this.hobbies;
 
     }
 
@@ -67,12 +90,31 @@ function crearClasePersona() {
 
       // Tu código aca:
 
-    }
+      var AmixEdad = [];
+
+      for (let i = 0; i < this.amigos.length; i++){
+        var comodin = this.amigos[i];
+        AmixEdad.push(comodin.edad);
+      };
+
+      var prom = 0;
+      for (let i = 0; i < AmixEdad.length; i++){
+        prom = prom + AmixEdad[i];
+      };
+      prom = prom / AmixEdad.length;
+
+      return prom;
+
+    };
+
   };
 
   return Persona;
 }
 
+// console.log(crearClasePersona());
+
 // No modifiques nada debajo de esta linea //
+
 
 module.exports = crearClasePersona

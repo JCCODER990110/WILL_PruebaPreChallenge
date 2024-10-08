@@ -14,7 +14,23 @@ function numeroSimetrico(num) {
 
   // Tu código:
 
-}
+
+  var str = num.toString();
+  var separar = str.split("");
+  var invertir = separar.reverse();
+  var unir = invertir.join("");
+
+  if (str == unir){
+    return true;
+  } else {
+    return false;
+  };
+
+
+};
+
+// console.log(numeroSimetrico(11711));
+// console.log(numeroSimetrico(11712));
 
 // No modifiques nada debajo de esta linea //
 

@@ -10,12 +10,27 @@ function pluck(array, propiedad) {
   // La función debe devolver un nuevo arreglo con solo los valores dentro de la propiedad recibida
   // Ej:
   // var productos = [{ name: 'TV LCD', price: 100}, { name: 'Computadora', price: 500 }]
-  // productos.pluck(productos, 'name') debería devolver ['TV LCD', 'Computadora']
+  // pluck(productos, 'name') debería devolver ['TV LCD', 'Computadora']
   // Pista: es una buena oportunidad para usar map.
 
   // Tu código acá:
 
-}
+
+  resultado = [];
+  comodin = {};
+
+  for (let i = 0; i < array.length; i++){
+    comodin = array[i];
+    resultado.push(comodin [propiedad]);
+  };
+
+  return resultado;
+
+
+};
+
+// var productos = [{ name: 'TV LCD', price: 100}, { name: 'Computadora', price: 500 }];
+// console.log(pluck(productos, 'name'));
 
 // No modifiques nada debajo de esta linea //
 

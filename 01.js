@@ -12,9 +12,19 @@ function soloNumeros(array) {
 
   // Tu código aca:
 
+  resultado = [];
+
+  for (let i = 0; i < array.length; i++){
+    if (typeof array[i] == "number" && Number.isInteger(array[i]) == true){
+      resultado.push(array[i]);
+    }
+  };
+
+  return resultado;
+
 }
 
 // No modifiques nada debajo de esta linea //
-
+// soloNumeros([1, 'Henry', 2]);
 
 module.exports = soloNumeros
